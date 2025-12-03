@@ -12,7 +12,7 @@ export class LoginNP{
     }
 
     async gotoWebsite(){
-        await this.page.goto(this.url, {TIMEOUT: 10000});
+        await this.page.goto(this.url, {TIMEOUT: 100000});
     }
 
     async inputUserInfo(username,password){
