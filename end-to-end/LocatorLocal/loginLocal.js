@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-export class LoginNP{
+export class LoginLocal{
     constructor(page){
         this.page=page;
         this.url= 'https://ho-staging.nusapalaparking.com/';
