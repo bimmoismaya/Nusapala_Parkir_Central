@@ -13,7 +13,8 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './end-to-end',
+
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,6 +27,12 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+
+    baseURL: 'https://main-engine-staging.nusapalaparking.com',
+    extraHTTPHeaders: {
+      'Authorization': `Bearer ${process.env.API_TOKEN || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NzAzMzk5MjQuNTM5NTk1LCJleHAiOjE3NzA0MjYzMjQuNTM5NTk1LCJzdWIiOiJVMTc2NzM0MjcxNDI1MiJ9.etAbWpOVF_bsNAhbZuQTm0w5-fMmYtEjNetrzRnmk3I'}`,
+      'Content-Type': `application/json`,
+    },
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
@@ -78,4 +85,5 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
 
