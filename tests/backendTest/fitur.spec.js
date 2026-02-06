@@ -27,21 +27,21 @@ test.describe('Backend API Testing - Fitur', () => {
     });
 
     test('Sistem buat fitur baru', async ({ request }) => {
+        const randomCode = Math.floor(Math.random()*1000);
         const response = await request.post(`${BASE_URL}/api/v1/main-engine/features`, {
             data: {
                 feature_active: true,
-                feature_code: "AUTO002",
+                feature_code: `AUTO_${randomCode}`,
                 feature_description: "Test-menggunakan-automation",
-                feature_name: "Auto002",
+                feature_name: "Auto003",
                 parent_feature_id: null
 
             }
         });
-
-
         const body = await response.json();
         console.log('Respon POST:', JSON.stringify(body, null, 2));
         expect(response.status()).toBe(201);
 
     });
+
 })
