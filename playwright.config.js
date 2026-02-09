@@ -30,7 +30,7 @@ export default defineConfig({
 
     baseURL: 'https://main-engine-staging.nusapalaparking.com',
     extraHTTPHeaders: {
-      'Authorization': `Bearer ${process.env.API_TOKEN || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NzAzMzk5MjQuNTM5NTk1LCJleHAiOjE3NzA0MjYzMjQuNTM5NTk1LCJzdWIiOiJVMTc2NzM0MjcxNDI1MiJ9.etAbWpOVF_bsNAhbZuQTm0w5-fMmYtEjNetrzRnmk3I'}`,
+      'Authorization': `Bearer ${process.env.API_TOKEN || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NzA2MTE3MjguMzE1NTc0LCJleHAiOjE3NzA2OTgxMjguMzE1NTc0LCJzdWIiOiJVMTc2NzM0MjcxNDI1MiJ9.yaxoEjiFpnGUPGr2pGdtDZppgU38YLyrdhPqqMVSS2w'}`,
       'Content-Type': `application/json`,
     },
     /* Base URL to use in actions like `await page.goto('')`. */

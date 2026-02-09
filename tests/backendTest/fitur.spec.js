@@ -44,4 +44,19 @@ test.describe('Backend API Testing - Fitur', () => {
 
     });
 
+    test('Sistem mengupdate fitur', async({request})=>{
+        const response = await request.put(`${BASE_URL}/api/v1/main-engine/features/226`,{
+            data:{
+                feature_active: true,
+                feature_code: `AUTO_Update`,
+                feature_description: "Test-menggunakan-automation",
+                feature_name: "otoupdate",
+                parent_feature_id: null
+            }
+        });
+        const body = await response.json();
+        console.log('RESPON PUT :', JSON.stringify(body, null, 2));
+        expect(response.status()).toBe(200);
+    });
+
 })
